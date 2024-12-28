@@ -1,5 +1,7 @@
 package gg.airbrush.plugins
 
+import net.minestom.server.MinecraftServer
+
 data class PluginInfo(
     val id: String,
     val name: String,
@@ -13,7 +15,7 @@ data class PluginInfo(
             if (dependency.matches(Regex("[0-9a-z-]+")))
                 continue
 
-            println("Plugin '$id' contains invalid dependency '$dependency' ([0-9a-z-])")
+            MinecraftServer.LOGGER.warn("Plugin '$id' contains invalid dependency '$dependency' ([0-9a-z-])")
         }
     }
 }

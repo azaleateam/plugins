@@ -1,8 +1,11 @@
 package gg.airbrush.plugins
 
-abstract class Plugin {
-    lateinit var info: PluginInfo
-    lateinit var loader: PluginClassLoader
+abstract class Plugin(
+    val pluginManager: PluginManager,
+    val loader: PluginClassLoader,
+    val info: PluginInfo
+) {
+    val dataFolder = pluginManager.pluginsFolder.resolve(info.name)
     var isSetup = false
 
     abstract fun setup()

@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "2.0.21"
     `maven-publish`
 }
 
@@ -13,12 +13,12 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.Minestom:Minestom:b58db7d5b0")
+    compileOnly("net.minestom:minestom-snapshots:4305006e6b")
     implementation("cc.ekblad:4koma:1.2.0")
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(21)
 }
 
 publishing {
