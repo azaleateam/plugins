@@ -1,4 +1,4 @@
-package gg.airbrush.plugins
+package team.azalea.plugins
 
 abstract class Plugin(
     val pluginManager: PluginManager,

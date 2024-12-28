@@ -4,7 +4,7 @@ plugins {
 }
 
 val versionNumber = "0.1.1"
-group = "gg.airbrush"
+group = "team.azalea"
 version = versionNumber
 
 repositories {
@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("net.minestom:minestom-snapshots:4305006e6b")
+    compileOnly("net.minestom:minestom-snapshots:9803f2bfe3")
     implementation("cc.ekblad:4koma:1.2.0")
 }
 
@@ -24,7 +24,7 @@ kotlin {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "gg.airbrush"
+            groupId = "team.azalea"
             artifactId = "plugins"
             version = versionNumber
 

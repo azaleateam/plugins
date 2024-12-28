@@ -1,4 +1,4 @@
-package gg.airbrush.plugins
+package team.azalea.plugins
 
 import cc.ekblad.toml.decode
 import cc.ekblad.toml.tomlMapper

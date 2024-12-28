@@ -1,4 +1,4 @@
-package gg.airbrush.plugins
+package team.azalea.plugins
 
 import net.minestom.server.MinecraftServer
 
