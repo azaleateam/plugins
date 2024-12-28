@@ -1,10 +1,9 @@
 package team.azalea.plugins
 
-abstract class Plugin(
-    val pluginManager: PluginManager,
-    val loader: PluginClassLoader,
-    val info: PluginInfo
-) {
+abstract class Plugin {
+    lateinit var pluginManager: PluginManager
+    lateinit var loader: PluginClassLoader
+    lateinit var info: PluginInfo
     val dataFolder = pluginManager.pluginsFolder.resolve(info.name)
     var isSetup = false
 

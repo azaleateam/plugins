@@ -24,7 +24,10 @@ class PluginManager {
 
             try {
                 val clazz = Class.forName(info.mainClass, true, loader)
-                val plugin = clazz.getConstructor().newInstance(this, loader, info) as Plugin
+                val plugin = clazz.getConstructor().newInstance() as Plugin
+                plugin.pluginManager = this
+                plugin.loader = loader
+                plugin.info = info
                 plugins[info.id.lowercase()] = plugin
             } catch (e: ClassNotFoundException) {
                 logger.error("Found plugin '${info.name}' with an invalid main class.")
