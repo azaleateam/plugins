@@ -4,7 +4,8 @@ abstract class Plugin {
     lateinit var pluginManager: PluginManager
     lateinit var loader: PluginClassLoader
     lateinit var info: PluginInfo
-    val dataFolder = pluginManager.pluginsFolder.resolve(info.name)
+    val dataFolder
+        get() = pluginManager.pluginsFolder.resolve(info.name)
     var isSetup = false
 
     abstract fun setup()
