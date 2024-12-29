@@ -6,6 +6,7 @@ import net.minestom.server.command.builder.arguments.Argument
 import net.minestom.server.command.builder.arguments.ArgumentType
 import net.minestom.server.command.builder.exception.ArgumentSyntaxException
 import net.minestom.server.command.builder.suggestion.SuggestionEntry
+import net.minestom.server.network.NetworkBuffer
 import team.azalea.plugins.PLUGIN_REGEX
 import team.azalea.plugins.Plugin
 import team.azalea.plugins.PluginManager
@@ -43,6 +44,17 @@ class PluginArgument(
         return ArgumentParserType.STRING
     }
 
+    // We need to override node properties to make tab completions functional.
+    // I don't know why.
+    override fun nodeProperties(): ByteArray? {
+        return NetworkBuffer.makeArray {
+            it.write(NetworkBuffer.VAR_INT, 0)
+        }
+    }
+
+    override fun toString(): String {
+        return "Plugin<$id>"
+    }
 }
 
 enum class Context {
