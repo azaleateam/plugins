@@ -14,7 +14,7 @@ repositories {
 Then, add the dependency.
 ```kt
 dependencies {
-    implementation("com.github.azaleateam:plugins:VERSION")
+    implementation("team.azalea:plugins:VERSION")
 }
 ```
 
