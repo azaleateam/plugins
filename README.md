@@ -14,7 +14,7 @@ repositories {
 Then, add the dependency.
 ```kt
 dependencies {
-    implementation("com.github.airbrushgg:plugins:VERSION")
+    implementation("com.github.azaleateam:plugins:VERSION")
 }
 ```
 
