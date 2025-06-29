@@ -1,7 +1,9 @@
 package team.azalea.plugins.command
 
+import net.kyori.adventure.text.format.NamedTextColor
 import net.kyori.adventure.text.format.TextColor
 
-val mint = TextColor.color(0x94, 0xEB, 0xD1)
-val ice = TextColor.color(0x85, 0xC8, 0xF2)
-val coral = TextColor.color(0xFC, 0x90, 0x88)
+val gray = NamedTextColor.GRAY
+val white = NamedTextColor.WHITE
+val primary = TextColor.color(27, 217, 106)
+val secondary = TextColor.color(255, 110, 110)

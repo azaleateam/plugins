@@ -25,7 +25,7 @@ class Plugins(
     override fun apply(sender: CommandSender, context: CommandContext) {
         val plugins = pluginManager.plugins.values.map {
             Component.text(it.info.name)
-                .color(if (it.isSetup) mint else coral)
+                .color(if (it.isSetup) primary else secondary)
         }
 
         var display = Component.text("  ")
@@ -38,17 +38,22 @@ class Plugins(
                         Component.empty()
                     else Component
                         .text(", ")
-                        .color(ice))
+                        .color(white))
 
         sender.sendMessage(Component
-            .text("Plugins (")
-            .color(ice)
+            .text("» ")
+            .color(gray)
             .append(Component
-                .text(plugins.size)
-                .color(mint))
-            .append(Component
-                .text("):"))
-            .append(Component.newline())
-            .append(display))
+                .text("Plugins (")
+                .color(white)
+                .append(Component
+                    .text(plugins.size)
+                    .color(primary))
+                .append(Component
+                    .text("):"))
+                .append(Component.newline())
+                .append(Component.text("» ")
+                    .color(gray))
+                .append(display)))
     }
 }

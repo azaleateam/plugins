@@ -1,11 +1,11 @@
 plugins {
     kotlin("jvm") version "2.2.0"
-//    id("com.gradleup.shadow") version "8.3.2"
+    id("com.gradleup.shadow") version "8.3.2"
     `maven-publish`
 }
 
 group = "team.azalea"
-version = "0.1.2"
+version = "0.1.3"
 
 repositories {
     mavenCentral()

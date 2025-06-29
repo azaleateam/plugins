@@ -10,6 +10,9 @@ import team.azalea.plugins.PluginManager
 import team.azalea.plugins.command.Context
 import team.azalea.plugins.command.PermissionManager
 import team.azalea.plugins.command.PluginArgument
+import team.azalea.plugins.command.gray
+import team.azalea.plugins.command.primary
+import team.azalea.plugins.command.white
 
 class Disable(
     private val pluginManager: PluginManager,
@@ -25,9 +28,11 @@ class Disable(
     override fun apply(sender: CommandSender, context: CommandContext) {
         val plugin = context.get(pluginArgument)
         pluginManager.disablePlugin(plugin)
-        sender.sendMessage(Component.text("${plugin.info.name} ")
-            .append(Component
-                .text("has been disabled.")
-                .color(NamedTextColor.GRAY)))
+        sender.sendMessage(Component.text("» ")
+            .color(gray)
+            .append(Component.text(plugin.info.name)
+                .color(primary))
+            .append(Component.text(" has been disabled.")
+                .color(white)))
     }
 }
